@@ -1,10 +1,16 @@
 import React from 'react';
 import styled from "styled-components";
 
-export const Menu = () => {
+type MenuItemsType = {
+    menuItems:string[]
+}
+export const Menu = (props:MenuItemsType) => {
     return (
         <StyleMenu>
             <ul>
+
+                {}
+
                 <li>
                     <a href="">Home</a>
                 </li>

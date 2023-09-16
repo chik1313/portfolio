@@ -1,7 +1,7 @@
 import React from 'react';
 import photo from '../../../assets/images/photo.jpg'
 import styled from "styled-components";
-import {FlexWrapper} from "../../../components/FlexWrapper";
+import {FlexWrapper} from "../../../components/menu/FlexWrapper";
 
 export const Main = () => {
     return (
@@ -31,3 +31,6 @@ const MainTitle = styled.h1`
 `
 const Name = styled.h2`
 `
+
+
+1
