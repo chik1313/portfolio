@@ -1,8 +1,8 @@
 import React from 'react';
 import photo from '../../../assets/images/photo.jpg'
 import styled from "styled-components";
-import {FlexWrapper} from "../../../components/menu/FlexWrapper";
-import {Container} from "../../../components/menu/Container";
+import {FlexWrapper} from "../../../components/FlexWrapper";
+import {Container} from "../../../components/Container";
 import {theme} from "../../../styles/Theme";
 
 export const Main = () => {

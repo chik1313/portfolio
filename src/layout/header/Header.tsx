@@ -1,9 +1,8 @@
 import React from 'react';
 import styled from "styled-components";
 import {Logo} from "../../components/logo/Logo";
-import {Menu} from "./Menu";
-import {Container} from "../../components/menu/Container";
-import {FlexWrapper} from "../../components/menu/FlexWrapper";
+import {Container} from "../../components/Container";
+import {FlexWrapper} from "../../components/FlexWrapper";
 import {HeaderMenu} from "./headerMenu/HeaderMenu";
 
 const items = ["Home" , "Skills" , "Works" , "Testimony" , "Contact"]
