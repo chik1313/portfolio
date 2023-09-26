@@ -18,6 +18,8 @@ export const GlobalStyles = createGlobalStyle`
     -moz-osx-font-smoothing: grayscale;
     color: ${theme.colors.font};
     line-height: 1.2;
+    
+    min-width: 360px;
   }
   a {
     text-decoration: none;
@@ -35,6 +37,10 @@ export const GlobalStyles = createGlobalStyle`
   }
   section {
     padding: 100px 0;
+    
+    @media ${theme.media.tablet} {
+      padding: 80px 0;
+    }
   }
   section:nth-of-type(odd) {
     background-color: ${theme.colors.primaryBg};

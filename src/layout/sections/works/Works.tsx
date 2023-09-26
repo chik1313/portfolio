@@ -8,6 +8,7 @@ import todolistImg from "../../../assets/images/project2.jpeg"
 import rickmorthyImg from "../../../assets/images/project4.jpg"
 import cardsImg from "../../../assets/images/project1.jpeg"
 import {Container} from "../../../components/Container";
+import {FlexWrapper} from "../../../components/FlexWrapper";
 
 const menuItems = ["All", "Landing Page", "REACT", "SPA"]
 export const Works = () => {
@@ -16,7 +17,7 @@ export const Works = () => {
             <Container>
                 <SectionTitle> My Works </SectionTitle>
                 <TabMenu menuItems={menuItems}/>
-                <Grid>
+                <FlexWrapper justify={"space-between"} align={"flex-start"} wrap={'wrap'}>
                     <Work src={todolistImg}
                           text={"React, Redux, TypeScript, Formik, MUI, Axios,Redux-thunk, React-Router-dom. Yup."}
                           title={"Task manager"}/>
@@ -27,7 +28,7 @@ export const Works = () => {
                           title={"Rick & Morty"}/>
                     <Work src={socialImg} text={"React, Redux, TypeScript, Axios, Redux-thunk, React-Router-dom."}
                           title={"Communication platform"}/>
-                </Grid>
+                </FlexWrapper>
             </Container>
         </StyledWorks>
     );
@@ -38,4 +39,7 @@ const Grid = styled.div`
   grid-template-columns: repeat(2, 1fr);
 `
 const StyledWorks = styled.section`
+    ${FlexWrapper} {
+      gap: 30px;
+    }
 `
