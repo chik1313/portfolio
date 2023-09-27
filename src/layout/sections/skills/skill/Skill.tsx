@@ -2,6 +2,7 @@ import React from 'react';
 import {Icon} from "../../../../components/icon/Icon";
 import {FlexWrapper} from "../../../../components/FlexWrapper";
 import {S} from "../Skills_Styles"
+import Typewriter from 'typewriter-effect';
 
 
 type SkillsPropsType = {
@@ -16,8 +17,21 @@ export const Skill = ({title, text, icon}: SkillsPropsType) => {
                 <S.IconWrapper>
                     <Icon iconId={icon}/>
                 </S.IconWrapper>
-                <S.SkillTitle>{title}</S.SkillTitle>
-                <S.SkillText>{text}</S.SkillText>
+                <S.SkillTitle>
+                    {title}
+                </S.SkillTitle>
+                <S.SkillText>
+                    <Typewriter
+                        options={{
+                            strings: [text],
+                            autoStart: true,
+                            loop: true,
+                            delay:40,
+                            deleteSpeed:9999999
+
+                        }}
+                    />
+                </S.SkillText>
             </FlexWrapper>
         </S.StyledSkill>
     );

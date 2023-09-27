@@ -2,7 +2,7 @@ import {theme} from "../../styles/Theme";
 import styled from "styled-components";
 
 const Slyder = styled.div`
-  
+  width: 100%;
   max-width: 500px;
   display: flex;
   flex-direction: column;
