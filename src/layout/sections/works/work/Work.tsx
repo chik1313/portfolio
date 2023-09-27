@@ -20,7 +20,7 @@ export const Work = ({title, text, src,display}: WorkPropsType) => {
             <S.Description>
                 <S.Title>{title}</S.Title>
                 <S.Text>{text}</S.Text>
-                <Link href={""}>demo</Link>
+                <Link active href={""}>demo</Link>
                 <Link href={""}>code</Link>
             </S.Description>
         </S.StyledWork>

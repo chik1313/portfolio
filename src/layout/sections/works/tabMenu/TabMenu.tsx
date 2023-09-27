@@ -2,15 +2,24 @@ import React from 'react';
 import styled from "styled-components";
 import {Link} from "../../../../components/Link";
 
-type MenuItemsType = {
-    menuItems: string[]
+
+type PropsType = {
+    tabsItems:  Array<{status: "all" | "next" | "react"  , title: string}>,
+    changeFilterStatus: (value: "all" | "next" | "react" ) => void
+    currentFilterStatus:"all" | "next" | "react"
 }
-export const TabMenu = (props: MenuItemsType) => {
+
+export const TabMenu = (props: PropsType) => {
     return (
         <StyledTabMenu>
             <ul>
-                {props.menuItems.map((item, index) => {
-                    return <ListItem key={index}><Link href="">{item}</Link></ListItem>
+                {props.tabsItems.map((item, index) => {
+                    return <ListItem key={index}>
+                        <Link active={ props.currentFilterStatus === item.status }  as={"button"}
+                              onClick={() => {props.changeFilterStatus(item.status)}}>
+                            {item.title}
+                        </Link>
+                    </ListItem>
                 })}
             </ul>
         </StyledTabMenu>
