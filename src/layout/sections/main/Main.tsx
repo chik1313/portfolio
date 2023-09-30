@@ -22,6 +22,7 @@ export const Main:React.FC = () => {
                             options={{
                                 strings: ['A Web Developer.'],
                                 autoStart: true,
+                                loop: true,
                             }}
                         />
                     </S.MainTitle>
