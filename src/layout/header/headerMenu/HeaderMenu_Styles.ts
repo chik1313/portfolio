@@ -1,14 +1,11 @@
 import styled, {css} from "styled-components";
 import {theme} from "../../../styles/Theme";
+import {Link} from "react-scroll";
 
-const Link = styled.a`
-  color: transparent;
-  text-align: center;
-  font-family: "Josefin Sans", sans-serif;
-  font-size: 30px;
-  font-weight: 400;
-
+const MenuItem = styled.li`
+  position: relative
 `
+
 const Mask = styled.span`
   position: absolute;
   top: 0;
@@ -16,7 +13,6 @@ const Mask = styled.span`
   display: inline-block;
   height: 50%;
   overflow-y: hidden;
-  /*outline: 1px solid red;*/
   color: ${theme.colors.accent};
 
   & + & {
@@ -28,9 +24,14 @@ const Mask = styled.span`
     }
   }
 `
-const MenuItem = styled.li`
-  position: relative;
 
+const NavLink = styled(Link)`
+  color: transparent;
+  text-align: center;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 30px;
+  font-weight: 400;
+  
   &::before {
     content: "";
     display: inline-block;
@@ -45,21 +46,23 @@ const MenuItem = styled.li`
     transform: scale(0);
   }
 
-  &:hover {
-    &::before {
-      transform: scale(1);
-    }
+    &:hover, &.active {
+      &::before {
+        transform: scale(1);
+        
+      }
 
-    ${Mask} {
-      transform: skewX(12deg) translateX(5px);
-      color: ${theme.colors.font};
+      ${Mask} {
+        transform: skewX(12deg) translateX(5px);
+        color: ${theme.colors.font};
 
-      & + ${Mask} {
-        transform: skewX(12deg) translateX(-5px);
+        & + ${Mask} {
+          transform: skewX(12deg) translateX(-5px);
+        }
       }
     }
-  }
 `
+
 
 const StyledMobileMenu = styled.nav`
 `
@@ -146,7 +149,7 @@ const StyledDesktopMenu = styled.nav`
  
 `
 export const S = {
-    Link,
+    NavLink,
     Mask,
     MenuItem,
     StyledMobileMenu,

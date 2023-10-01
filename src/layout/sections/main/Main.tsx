@@ -11,7 +11,7 @@ import Tilt from 'react-parallax-tilt';
 
 export const Main:React.FC = () => {
     return (
-        <S.StyledMain>
+        <S.StyledMain id={"home"}>
             <Container>
             <FlexWrapper align={"center"} justify={"space-around"} wrap={'wrap'}>
                 <div>

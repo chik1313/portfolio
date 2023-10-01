@@ -2,13 +2,10 @@ import React from 'react';
 import {Menu} from "../menu/Menu";
 import {S} from "../HeaderMenu_Styles"
 
-type MenuItemsType = {
-    menuItems: string[]
-}
-export const DesktopMenu:React.FC<MenuItemsType> = (props: MenuItemsType) => {
+export const DesktopMenu:React.FC = () => {
     return (
         <S.StyledDesktopMenu>
-            <Menu  menuItems={props.menuItems}/>
+            <Menu/>
         </S.StyledDesktopMenu>
     );
 };
