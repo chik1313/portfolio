@@ -1,88 +1,118 @@
-import { useCallback } from "react";
-import type { Container, Engine } from "tsparticles-engine";
+import {useCallback} from "react";
 import Particles from "react-tsparticles";
-import { loadFull } from "tsparticles";
-import { loadSlim } from "tsparticles-slim";
+import type {Engine} from "tsparticles-engine";
+import {loadFull} from "tsparticles";
 
-export const Particle = () => {
-    const particlesInit = useCallback(async (engine: Engine) => {
-        console.log(engine);
-
-        // you can initialize the tsParticles instance (engine) here, adding custom shapes or presets
-        // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
-        // starting from v2 you can add only the features you need reducing the bundle size
-        //await loadFull(engine);
-        await loadSlim(engine);
+export function ParticlesContainer(props: unknown) {
+    // this customizes the component tsParticles installation
+    const customInit = useCallback(async (engine: Engine) => {
+        // this adds the bundle to tsParticles
+        await loadFull(engine);
     }, []);
 
-    const particlesLoaded = useCallback(async (container: Container | undefined) => {
-        await console.log(container);
-    }, []);
-    return (
-        <Particles
-            id="tsparticles"
-            init={particlesInit}
-            loaded={particlesLoaded}
-            options={{
-                fpsLimit: 120,
-                interactivity: {
-                    events: {
-                        onHover: {
-                            enable: true,
-                            mode: "grab",
-                        },
-                        resize: true,
-                    },
-                    modes: {
-                        push: {
-                            quantity: 1,
-                        },
-                        repulse: {
-                            distance: 200,
-                            duration: 0,
-                        },
-                    },
+    const windowWidth = window.innerWidth
+
+    const options = {
+        "particles": {
+            "number": {
+                "value": windowWidth < 1000 ? 15 : 50,
+                "density": {
+                    "enable": false,
+                    "value_area": 800
+                }
+            },
+            "color": {
+                "value": "#fff"
+            },
+            "shape": {
+                "type": "star",
+            },
+            "opacity": {
+                "value": 1,
+                "random": true,
+                "anim": {
+                    "enable": true,
+                    "speed": 1,
+                    "opacity_min": 0.7,
+                    "sync": false
+                }
+            },
+            "size": {
+                "value": 4,
+                "random": true,
+                "anim": {
+                    "enable": true,
+                    "speed": 4,
+                    "size_min": 3,
+                    "sync": false
+                }
+            },
+            "rotate": {
+                "value": 0,
+                "random": true,
+                "direction": "clockwise",
+                "animation": {
+                    "enable": true,
+                    "speed": 5,
+                    "sync": false
+                }
+            },
+            "line_linked": {
+                "enable": true,
+                "distance": windowWidth > 800 ? 180 : 100,
+                "color": "#ffffff",
+                "opacity": 0.4,
+                "width": 2
+            },
+            "move": {
+                "enable": true,
+                "speed": 1,
+                "random": false,
+                "straight": false,
+                "attract": {
+                    "enable": false,
+                    "rotateX": 600,
+                    "rotateY": 1200
+                }
+            }
+        },
+        "interactivity": {
+            "events": {
+                "onhover": {
+                    "enable": windowWidth > 800,
+                    "mode": ["grab"]
                 },
-                particles: {
-                    color: {
-                        value: "#ffffff",
-                    },
-                    links: {
-                        color: "#ffffff",
-                        distance: 200,
-                        enable: true,
-                        opacity: 0.5,
-                        width: 2,
-                    },
-                    move: {
-                        direction: "none",
-                        enable: true,
-                        outModes: {
-                            default: "bounce",
-                        },
-                        random: false,
-                        speed: 0.8,
-                        straight: false,
-                    },
-                    number: {
-                        density: {
-                            enable: true,
-                            area: 1000,
-                        },
-                        value: 20,
-                    },
-                    opacity: {
-                        value: 0.5,
-                    },
-                    shape: {
-                            type: "star",
-                    },
-                    size: {
-                        value: { min: 1, max: 3.5 },
-                    },
+                "onclick": {
+                    "enable": false,
+                    "mode": "bubble"
                 },
-                detectRetina: true,
-            }}
-        />
-    );
-};
+                "resize": true
+            },
+            "modes": {
+                "grab": {
+                    "distance": 200,
+                    "line_linked": {
+                        "opacity": 1
+                    }
+                },
+                "repulse": {
+                    "distance": 200
+                },
+                "push": {
+                    "particles_nb": 4
+                },
+                "remove": {
+                    "particles_nb": 2
+                }
+            }
+        },
+        "retina_detect": true,
+        "background": {
+            "image": "",
+            "position": "50% 50%",
+            "repeat": "no-repeat",
+        }
+    }
+
+    return <Particles options={options} init={customInit} />;
+}

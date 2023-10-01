@@ -8,7 +8,7 @@ import {Testimony} from "./layout/sections/testimony/Testimony";
 import {Contact} from "./layout/sections/contacts/Contacts";
 import {Slogan} from "./layout/sections/slogan/Slogan";
 import {Footer} from "./layout/footer/Footer";
-import {Particle} from "./components/particle/Particle";
+import { ParticlesContainer} from "./components/particle/Particle";
 
 
 
@@ -18,7 +18,7 @@ import {Particle} from "./components/particle/Particle";
 function App() {
     return (
         <div className="App">
-            <Particle/>
+            <ParticlesContainer/>
             <Header/>
             <Main/>
             <Skills/>
