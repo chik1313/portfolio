@@ -5,12 +5,10 @@ import {Button} from "../../../components/Button";
 import {FlexWrapper} from "../../../components/FlexWrapper";
 
 const StyledWork = styled.div`
-  
-  flex: 1 1 45%;
   background-color: ${theme.colors.secondaryBg};
-
+  /*flex: 1 1 45%;
   width: 330px;
-  flex-grow: 1;
+  flex-grow: 1;*/
 
   ${Link} {
     padding: 10px 0;
@@ -19,11 +17,7 @@ const StyledWork = styled.div`
       margin-left: 20px;
     }
   }
-
-  @media ${theme.media.mobile} {
-    max-width: 540px;
-    flex: 1 1 100%;
-  }
+  
 `
 const ImageWrapper = styled.div`
   position: relative;
@@ -32,7 +26,8 @@ const ImageWrapper = styled.div`
     position: absolute;
     left: 50%;
     top: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -40%);
+    transition: ${theme.animations.transaction};
 
     &::before {
       width: 100%;
@@ -49,6 +44,7 @@ const ImageWrapper = styled.div`
       background: rgba(0, 0, 0, 0.3);
       backdrop-filter: blur(4px);
       opacity: 0;
+      transition: ${theme.animations.transaction};
     }
 
   &:hover {
@@ -58,9 +54,10 @@ const ImageWrapper = styled.div`
 
     ${Button} {
       opacity: 1;
+      transform: translate(-50%, -50%);
     }
   }
-}
+
 
 @media ${theme.media.mobile} {
   &::before {

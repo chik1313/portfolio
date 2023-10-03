@@ -16,6 +16,7 @@ export const Button = styled.button`
     &::before{
       height: 100%;
       width: 100%;
+      
     }
   }
   
@@ -25,7 +26,7 @@ export const Button = styled.button`
     height: 10px;
     width: 50%;
     background-color: ${theme.colors.accent};
-    
+    transition: ${theme.animations.transaction};
     position: absolute;
     z-index: -1;
     bottom: 0;

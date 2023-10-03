@@ -8,7 +8,7 @@ const StyledSkill = styled.div`
   width: 330px;
   padding: 42px 20px 52px;
   flex-grow: 1;
-  
+
   @media ${theme.media.mobile} {
     padding: 62px 0 40px;
   }
@@ -18,10 +18,11 @@ const SkillTitle = styled.h3`
   text-transform: uppercase;
 `
 const SkillText = styled.p`
-  text-align: center; 
+  text-align: center;
 `
 const IconWrapper = styled.div`
-    position: relative;
+  position: relative;
+
   &::before {
     content: "";
     display: inline-block;
@@ -29,7 +30,7 @@ const IconWrapper = styled.div`
     height: 80px;
     background: rgba(255, 255, 255, 0.10);
     transform: rotate(45deg) translate(-50%, -50%);
-    
+
     position: absolute;
     left: 50%;
     top: 50%;
@@ -43,5 +44,4 @@ export const S = {
     SkillTitle,
     SkillText,
     IconWrapper
-
 }

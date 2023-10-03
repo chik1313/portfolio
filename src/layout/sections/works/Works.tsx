@@ -9,8 +9,9 @@ import cardsImg from "../../../assets/images/project1.jpeg"
 import {Container} from "../../../components/Container";
 import {FlexWrapper} from "../../../components/FlexWrapper";
 import {S} from "./Works_Styles"
+import {motion, AnimatePresence} from "framer-motion"
 
-const tabsItems: Array<{status: "all" | "next" | "react"  , title: string}> = [
+const tabsItems: Array<{ status: "all" | "next" | "react", title: string }> = [
     {
         status: "all",
         title: "All"
@@ -32,31 +33,35 @@ const worksData = [
         src: todolistImg,
         title: "Task manager",
         text: "React, Redux Toolkit, TypeScript, Formik, MUI, Axios, Redux-thunk, Unit-Tests, Storybook, React-Router-dom, Yup.",
-        type: "react"
+        type: "react",
+        id: 1
     },
     {
         src: cardsImg,
         title: "Study cards",
         text: "React, Redux, TypeScript, Formik, Axios, Redux-thunk, React-Router-dom, Yup, MUI, Sass.",
-        type: "react"
+        type: "react",
+        id: 2
     },
     {
         src: rickmorthyImg,
         title: "Rick & Morty",
         text: "NextJS , React-Query, Axios , React-Router-dom, Sass.",
-        type: "next"
+        type: "next",
+        id: 3
 
     },
     {
         src: socialImg,
         title: "Communication platform",
         text: "React, Redux, TypeScript, Axios, Redux-thunk,  React-Router-dom.",
-        type: "react"
+        type: "react",
+        id: 4
 
     },
 ]
 export const Works: React.FC = () => {
-    const [currentFilterStatus,setCurrentFilterStatus] = useState<"all" | "next" | "react">("all")
+    const [currentFilterStatus, setCurrentFilterStatus] = useState<"all" | "next" | "react">("all")
 
     let filteredWorks = worksData
 
@@ -80,9 +85,25 @@ export const Works: React.FC = () => {
                          currentFilterStatus={currentFilterStatus}
                 />
                 <FlexWrapper justify={"space-between"} align={"flex-start"} wrap={'wrap'}>
-                    {filteredWorks.map((work, index) => {
-                        return <Work title={work.title} text={work.text} src={work.src} key={index}/>
-                    })}
+                    <AnimatePresence>
+                        {filteredWorks.map((work, index) => {
+                            return (
+                                <motion.div style={{
+                                    width: "400px",
+                                    flexGrow: "1",
+                                    maxWidth: "540px",
+                                }}
+                                    layout
+                                    initial={{opacity: 0}}
+                                    animate={{opacity: 1}}
+                                    exit={{opacity: 0}}
+                                    key={work.id}
+                                >
+                                    <Work title={work.title} text={work.text} src={work.src} key={work.id}/>
+                                </motion.div>
+                            )
+                        })}
+                    </AnimatePresence>
                 </FlexWrapper>
             </Container>
         </S.StyledWorks>

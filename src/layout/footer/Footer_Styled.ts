@@ -25,7 +25,7 @@ const SocialLink = styled.a`
   display: flex;
   justify-content: center;
   align-items: center;
-
+  transition: ${theme.animations.transaction};
   color: ${theme.colors.accent};
 
   &:hover {
