@@ -34,6 +34,8 @@ const worksData = [
         title: "Task manager",
         text: "React, Redux Toolkit, TypeScript, Formik, MUI, Axios, Redux-thunk, Unit-Tests, Storybook, React-Router-dom, Yup.",
         type: "react",
+        demo: "https://chik1313.github.io/todolist-project/",
+        code: "https://github.com/chik1313/todolist-project",
         id: 1
     },
     {
@@ -41,6 +43,8 @@ const worksData = [
         title: "Study cards",
         text: "React, Redux, TypeScript, Formik, Axios, Redux-thunk, React-Router-dom, Yup, MUI, Sass.",
         type: "react",
+        demo: "https://kiri1111.github.io/project/",
+        code: "https://github.com/Kiri1111/project",
         id: 2
     },
     {
@@ -48,6 +52,8 @@ const worksData = [
         title: "Rick & Morty",
         text: "NextJS , React-Query, Axios , React-Router-dom, Sass.",
         type: "next",
+        demo: "https://rickand-morty-alpha.vercel.app/characters",
+        code: "https://github.com/chik1313/RickandMorty",
         id: 3
 
     },
@@ -56,6 +62,8 @@ const worksData = [
         title: "Communication platform",
         text: "React, Redux, TypeScript, Axios, Redux-thunk,  React-Router-dom.",
         type: "react",
+        demo: "https://chik1313.github.io/samurai-way-main/",
+        code: "https://github.com/chik1313/samurai-way-main",
         id: 4
 
     },
@@ -99,7 +107,7 @@ export const Works: React.FC = () => {
                                     exit={{opacity: 0}}
                                     key={work.id}
                                 >
-                                    <Work title={work.title} text={work.text} src={work.src} key={work.id}/>
+                                    <Work title={work.title} text={work.text} src={work.src} key={work.id} demo={work.demo} code={work.code}/>
                                 </motion.div>
                             )
                         })}

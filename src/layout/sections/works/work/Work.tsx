@@ -7,10 +7,13 @@ type WorkPropsType = {
     title: string
     text: string
     src: string
+    demo: string
+    code: string
     display?: string
 
+
 }
-export const Work = ({title, text, src,display}: WorkPropsType) => {
+export const Work = ({title, text, src,display,demo,code}: WorkPropsType) => {
     return (
         <S.StyledWork>
             <S.ImageWrapper>
@@ -20,8 +23,8 @@ export const Work = ({title, text, src,display}: WorkPropsType) => {
             <S.Description>
                 <S.Title>{title}</S.Title>
                 <S.Text>{text}</S.Text>
-                <Link active href={""}>demo</Link>
-                <Link href={""}>code</Link>
+                <Link active href={demo}>demo</Link>
+                <Link href={code}>code</Link>
             </S.Description>
         </S.StyledWork>
     );
