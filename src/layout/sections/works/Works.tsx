@@ -98,7 +98,7 @@ export const Works: React.FC = () => {
                             return (
                                 <motion.div style={{
                                     width: "400px",
-
+                                    flexGrow: "1",
                                     maxWidth: "540px",
                                 }}
                                     layout
