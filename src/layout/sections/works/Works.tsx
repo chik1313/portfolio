@@ -89,7 +89,7 @@ export const Works: React.FC = () => {
             <Container>
                 <SectionTitle> My Works </SectionTitle>
                 <TabMenu tabsItems={tabsItems}
-                         changeFilterStatus={changeFilterStatus}
+
                          currentFilterStatus={currentFilterStatus}
                 />
                 <FlexWrapper justify={"space-between"} align={"flex-start"} wrap={'wrap'}>
