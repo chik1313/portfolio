@@ -28,7 +28,7 @@ export const TabMenu = (props: PropsType) => {
 const StyledTabMenu = styled.nav`
   
   ul {
-    display: flex;
+   
     justify-content: space-between;
     max-width: 352px;
     width: 100%;
