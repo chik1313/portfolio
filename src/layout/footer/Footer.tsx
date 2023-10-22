@@ -14,7 +14,7 @@ const socialItemData = [
     },
     {
         iconId: "linkedin",
-        link: "https://www.linkedin.com/in/vladyslav-ochkurov-19608a260/"
+        link: "https://www.linkedin.com/in/vladyslav-ochkurov-19608a260/s"
     },
 ]
 export const Footer: React.FC = () => {
